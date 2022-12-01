@@ -1,6 +1,6 @@
 //lib
-import { View, Text, Image } from 'react-native'
-import React from 'react'
+import { View, Text, Image, Button } from 'react-native'
+import React, { useEffect } from 'react'
 //style
 import styles from "../styles/style"
 import typo from "../styles/typography"
@@ -8,8 +8,15 @@ import colors from "../styles/colors"
 import spacing from "../styles/spacing"
 //image
 import Icon from "../assets/ECM_icon.png"
+import { useNavigation } from '@react-navigation/native'
 
 const Home = () => {
+  const navigation = useNavigation();
+  useEffect(() => {
+    setTimeout(() => {
+      navigation.navigate('IntroFirst')
+    }, 5000);
+  }, []);
   return (
     <View style={styles.container}>
       <Image source={Icon} />

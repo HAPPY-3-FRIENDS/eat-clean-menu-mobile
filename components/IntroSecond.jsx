@@ -9,11 +9,11 @@ import spacing from "../styles/spacing";
 import buttons from "../styles/button";
 //image
 import Icon from "../assets/ECM_icon.png";
-import Pic from "../assets/ECM_pic_1.png";
-import Btn from "../assets/Button_Intro_1.png";
+import Pic from "../assets/ECM_pic_2.png";
+import Btn from "../assets/Button_Intro_2.png";
 import { useNavigation } from "@react-navigation/native";
 
-const IntroFirst = () => {
+const IntroSecond = () => {
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
@@ -28,12 +28,12 @@ const IntroFirst = () => {
       </View>
       <View style={styles.bottom}>
         <View style={styles.dishWrap}>
-          <Text style={typo.subtitle}>Thực đơn mỗi ngày</Text>
+          <Text style={typo.subtitle}>Thống kê chi tiết</Text>
           <Text style={[typo.text, spacing.space_ver_3, styles.textWrap]}>
-            Thực đơn xuất phát từ những nguyên liệu thuần Việt, giúp bạn không
-            còn lo lắng về mỗi bữa ăn
+            Hiểu rõ hơn về thói quen dinh dưỡng của bạn với thống kê chi tiết
+            cho từng cá nhân
           </Text>
-          <TouchableOpacity onPress={() => navigation.navigate('IntroSecond')}>
+          <TouchableOpacity onPress={() => navigation.navigate('IntroLast')}>
             <Image source={Btn}/>
           </TouchableOpacity>
         </View>
@@ -42,4 +42,4 @@ const IntroFirst = () => {
   );
 };
 
-export default IntroFirst;
+export default IntroSecond;

@@ -8,11 +8,13 @@ const typos = StyleSheet.create({
   },
   subtitle: {
     fontSize: 26,
-    fontFamily: 'sans-serif'
+    fontFamily: 'sans-serif',
+    fontWeight: 'bold'
   },
   text: {
     fontSize: 16,
-    fontFamily: 'sans-serif'
+    fontFamily: 'sans-serif',
+    fontWeight: '100'
   }
 });
 export default typos;
