@@ -8,6 +8,14 @@ const colors = StyleSheet.create({
     paddingBottom: 16,
     paddingLeft: 24,
     paddingRight: 24,
+  },
+  inforButton: {
+    backgroundColor: '#24B445',
+    width: '100%',
+    alignItems: "center",
+    padding: 16,
+    borderRadius: 12,
+    marginTop: 32
   }
 });
 export default colors;

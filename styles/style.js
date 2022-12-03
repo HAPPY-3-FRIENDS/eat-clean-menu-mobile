@@ -65,5 +65,53 @@ const styles = StyleSheet.create({
     marginTop: '16%',
     paddingTop: '8%',
   },
+  headerInfo: {
+    width: '88%',
+    flex: 1,
+    alignItems: "flex-start",
+    justifyContent: "flex-end",
+    flexDirection: 'column',
+    zIndex: 999,
+    marginTop: '16%'
+  },
+  innerFirstInfor: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: 'column',
+    marginTop: '8%',
+    // borderWidth: 4,
+    // borderColor: '#24B445',
+    // borderStyle: "solid",
+  },
+  innerFirstInforImg: {
+    borderWidth: 4,
+    borderColor: '#24B445',
+    borderStyle: "solid",
+    padding: 8,
+    borderRadius: 100,
+    zIndex: -1
+  },
+  innerSecondInfor: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: 'column',
+    marginTop: '16%',
+    paddingTop: '8%',
+  },
+  innerThirdInfor: {
+    flex: 1,
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
+    flexDirection: 'column',
+    marginTop: 24
+  },
+  bottomInfor: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: 'column',
+  },
 });
 export default styles;

@@ -12,5 +12,8 @@ const colors = StyleSheet.create({
   extraColor: {
     color: '#173430'
   },
+  wColor: {
+    color: '#FFF'
+  },
 });
 export default colors;
