@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   },
   wrap: {
     flex: 1,
-    width: '88%',
+    width: '90%',
     alignItems: "center",
     justifyContent: "space-between",
     flexDirection: 'row',
@@ -39,6 +39,31 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     flexDirection: 'row'
+  },
+  headerLogin: {
+    width: '80%',
+    flex: 1,
+    alignItems: "flex-start",
+    justifyContent: "flex-end",
+    flexDirection: 'column',
+    zIndex: 999,
+    marginLeft: '8%',
+    marginTop: '16%'
+  },
+  innerLogin: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: 'column',
+    marginTop: '8%'
+  },
+  bottomLogin: {
+    flex: 2,
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: 'column',
+    marginTop: '16%',
+    paddingTop: '8%',
   },
 });
 export default styles;

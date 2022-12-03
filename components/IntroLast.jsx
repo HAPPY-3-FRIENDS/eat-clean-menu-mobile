@@ -8,7 +8,7 @@ import colors from "../styles/colors";
 import spacing from "../styles/spacing";
 import buttons from "../styles/button";
 //image
-import Icon from "../assets/ECM_icon.png";
+import Icon from "../assets/Button_back.png";
 import Pic from "../assets/ECM_pic_3.png";
 import Btn from "../assets/Button_Intro_3.png";
 import { useNavigation } from "@react-navigation/native";
@@ -18,19 +18,21 @@ const IntroLast = () => {
   return (
     <View style={styles.container}>
       <View style={styles.wrap}>
-        <Image source={Icon} />
+        <TouchableOpacity onPress={() => navigation.navigate('IntroSecond')}>
+          <Image source={Icon} />
+        </TouchableOpacity>
       </View>
       <View style={styles.inner}>
         <Image source={Pic} />
       </View>
       <View style={styles.bottom}>
         <View style={styles.dishWrap}>
-          <Text style={typo.subtitle}>Thống kê chi tiết</Text>
+          <Text style={typo.subtitle}>Bắt đầu và trải nghiệm</Text>
           <Text style={[typo.text, spacing.space_ver_3, styles.textWrap]}>
-            Hiểu rõ hơn về thói quen dinh dưỡng của bạn với thống kê chi tiết
-            cho từng cá nhân
+            Hãy bắt đầu hành trình của bạn với ECM Eat Clean Menu - Thực đơn
+            khỏe, sức khỏe vàng!
           </Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Login')}>
             <Image source={Btn} />
           </TouchableOpacity>
         </View>

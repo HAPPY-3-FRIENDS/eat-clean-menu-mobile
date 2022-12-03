@@ -8,7 +8,7 @@ import colors from "../styles/colors";
 import spacing from "../styles/spacing";
 import buttons from "../styles/button";
 //image
-import Icon from "../assets/ECM_icon.png";
+import Icon from "../assets/Button_back.png";
 import Pic from "../assets/ECM_pic_2.png";
 import Btn from "../assets/Button_Intro_2.png";
 import { useNavigation } from "@react-navigation/native";
@@ -18,7 +18,9 @@ const IntroSecond = () => {
   return (
     <View style={styles.container}>
       <View style={styles.wrap}>
-        <Image source={Icon} />
+        <TouchableOpacity onPress={() => navigation.navigate('IntroFirst')}>
+          <Image source={Icon} />
+        </TouchableOpacity>
         <TouchableOpacity style={buttons.nextButton}>
           <Text>Bỏ qua</Text>
         </TouchableOpacity>
@@ -33,8 +35,8 @@ const IntroSecond = () => {
             Hiểu rõ hơn về thói quen dinh dưỡng của bạn với thống kê chi tiết
             cho từng cá nhân
           </Text>
-          <TouchableOpacity onPress={() => navigation.navigate('IntroLast')}>
-            <Image source={Btn}/>
+          <TouchableOpacity onPress={() => navigation.navigate("IntroLast")}>
+            <Image source={Btn} />
           </TouchableOpacity>
         </View>
       </View>

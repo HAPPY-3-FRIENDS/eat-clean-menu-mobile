@@ -7,6 +7,8 @@ import IntroLast from "./components/IntroLast";
 import IntroSecond from "./components/IntroSecond";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Login from "./components/Login";
+import LoginInformation from "./components/LoginInformation";
 
 const Stack = createNativeStackNavigator();
 
@@ -41,6 +43,22 @@ export default function App() {
         <Stack.Screen
           name="IntroLast"
           component={IntroLast}
+          options={{ title: '' }}
+          screenOptions={{
+            fullScreenGestureEnabled:true
+          }}
+        />
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{ title: '' }}
+          screenOptions={{
+            fullScreenGestureEnabled:true
+          }}
+        />
+        <Stack.Screen
+          name="LoginInformation"
+          component={LoginInformation}
           options={{ title: '' }}
           screenOptions={{
             fullScreenGestureEnabled:true

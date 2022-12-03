@@ -15,6 +15,11 @@ const typos = StyleSheet.create({
     fontSize: 16,
     fontFamily: 'sans-serif',
     fontWeight: '100'
+  },
+  textBold: {
+    fontSize: 16,
+    fontFamily: 'sans-serif',
+    fontWeight: 'bold'
   }
 });
 export default typos;

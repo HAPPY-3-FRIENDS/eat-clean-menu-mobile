@@ -18,7 +18,9 @@ const IntroFirst = () => {
   return (
     <View style={styles.container}>
       <View style={styles.wrap}>
-        <Image source={Icon} />
+        <View>
+          <Image source={Icon} />
+        </View>
         <TouchableOpacity style={buttons.nextButton}>
           <Text>Bỏ qua</Text>
         </TouchableOpacity>
@@ -33,8 +35,8 @@ const IntroFirst = () => {
             Thực đơn xuất phát từ những nguyên liệu thuần Việt, giúp bạn không
             còn lo lắng về mỗi bữa ăn
           </Text>
-          <TouchableOpacity onPress={() => navigation.navigate('IntroSecond')}>
-            <Image source={Btn}/>
+          <TouchableOpacity onPress={() => navigation.navigate("IntroSecond")}>
+            <Image source={Btn} />
           </TouchableOpacity>
         </View>
       </View>
