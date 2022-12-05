@@ -21,7 +21,7 @@ const IntroSecond = () => {
         <TouchableOpacity onPress={() => navigation.navigate('IntroFirst')}>
           <Image source={Icon} />
         </TouchableOpacity>
-        <TouchableOpacity style={buttons.nextButton}>
+        <TouchableOpacity onPress={() => navigation.navigate('Login')} style={buttons.nextButton}>
           <Text>Bỏ qua</Text>
         </TouchableOpacity>
       </View>

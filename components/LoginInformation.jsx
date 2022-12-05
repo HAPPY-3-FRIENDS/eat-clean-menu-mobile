@@ -58,7 +58,7 @@ const LoginInformation = () => {
           </View>
         </View>
         <View style={styles.bottomInfor}>
-          <TouchableOpacity style={button.inforButton}>
+          <TouchableOpacity onPress={() => navigation.navigate('SettingGender')} style={button.inforButton}>
             <Text style={colors.wColor}>Bắt đầu</Text>
           </TouchableOpacity>
         </View>

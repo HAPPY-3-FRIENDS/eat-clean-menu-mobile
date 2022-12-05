@@ -16,6 +16,17 @@ const colors = StyleSheet.create({
     padding: 16,
     borderRadius: 12,
     marginTop: 32
+  },
+  settingButton: {
+    backgroundColor: '#FFF',
+    width: '100%',
+    padding: 24,
+    borderRadius: 12,
+  },
+  settingBackButton: {
+    position: "absolute",
+    top: '8%',
+    left: 0
   }
 });
 export default colors;

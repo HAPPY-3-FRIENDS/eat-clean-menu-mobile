@@ -10,5 +10,8 @@ const textInput = StyleSheet.create({
     marginTop: 8,
     flexDirection: "row",
   },
+  settingText: {
+    textAlign: "center"
+  },
 });
 export default textInput;

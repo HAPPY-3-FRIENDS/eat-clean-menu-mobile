@@ -11,6 +11,10 @@ const typos = StyleSheet.create({
     fontFamily: 'sans-serif',
     fontWeight: 'bold'
   },
+  subtitleLight: {
+    fontSize: 26,
+    fontFamily: 'sans-serif',
+  },
   text: {
     fontSize: 16,
     fontFamily: 'sans-serif',

@@ -9,6 +9,13 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Login from "./components/Login";
 import LoginInformation from "./components/LoginInformation";
+import SettingGender from "./components/SettingGender";
+import SettingTarget from "./components/SettingTarget";
+import SettingAge from "./components/SettingAge";
+import SettingHeight from "./components/SettingHeight";
+import SettingWeight from "./components/SettingWeight";
+import SettingPractice from "./components/SettingPractice";
+import Analysis from "./components/Analysis";
 
 const Stack = createNativeStackNavigator();
 
@@ -59,6 +66,62 @@ export default function App() {
         <Stack.Screen
           name="LoginInformation"
           component={LoginInformation}
+          options={{ title: '' }}
+          screenOptions={{
+            fullScreenGestureEnabled:true
+          }}
+        />
+        <Stack.Screen
+          name="SettingGender"
+          component={SettingGender}
+          options={{ title: '' }}
+          screenOptions={{
+            fullScreenGestureEnabled:true
+          }}
+        />
+        <Stack.Screen
+          name="SettingTarget"
+          component={SettingTarget}
+          options={{ title: '' }}
+          screenOptions={{
+            fullScreenGestureEnabled:true
+          }}
+        />
+        <Stack.Screen
+          name="SettingAge"
+          component={SettingAge}
+          options={{ title: '' }}
+          screenOptions={{
+            fullScreenGestureEnabled:true
+          }}
+        />
+        <Stack.Screen
+          name="SettingHeight"
+          component={SettingHeight}
+          options={{ title: '' }}
+          screenOptions={{
+            fullScreenGestureEnabled:true
+          }}
+        />
+        <Stack.Screen
+          name="SettingWeight"
+          component={SettingWeight}
+          options={{ title: '' }}
+          screenOptions={{
+            fullScreenGestureEnabled:true
+          }}
+        />
+        <Stack.Screen
+          name="SettingPractice"
+          component={SettingPractice}
+          options={{ title: '' }}
+          screenOptions={{
+            fullScreenGestureEnabled:true
+          }}
+        />
+        <Stack.Screen
+          name="Analysis"
+          component={Analysis}
           options={{ title: '' }}
           screenOptions={{
             fullScreenGestureEnabled:true
