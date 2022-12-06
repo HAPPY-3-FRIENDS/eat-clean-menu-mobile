@@ -3,6 +3,8 @@ import { View, Text, Image, Button, TouchableOpacity } from "react-native";
 import React, { memo, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import SmoothPicker from "react-native-smooth-picker";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
 //style
 import styles from "../styles/style";
 import typo from "../styles/typography";
@@ -14,6 +16,7 @@ import ButtonBack from "../assets/Button_back.png";
 import ButtonNext from "../assets/Button_Setting_3.png";
 import textInput from "../styles/textInput";
 
+let STORAGE_KEY_A = '@age';
 
 const array = Array.from({length: 100}, (_, i) => i + 1)
 const opacities = {
@@ -73,13 +76,19 @@ const ItemToRender = ({ item, index }, indexSelected, vertical) => {
 
 
 const SettingAge = () => {
+  const [selected, setSelected] = useState(17);
   const navigation = useNavigation();
   function handleChange(index) {
     setSelected(index);
   }
 
-  const [selected, setSelected] = useState(1);
-
+  const saveData = async () => {
+    try {
+      await AsyncStorage.setItem(STORAGE_KEY_A, (selected + 1).toString())
+    } catch (e) {
+    }
+  }
+ 
   return (
     <View style={styles.container}>
       <View style={styles.headerSetting}>
@@ -114,7 +123,7 @@ const SettingAge = () => {
         </View>
       </View>
       <View style={styles.bottomSetting}>
-        <TouchableOpacity onPress={() => navigation.navigate('SettingHeight')}>
+        <TouchableOpacity onPress={() => [navigation.navigate('SettingHeight'), saveData()]}>
           <Image source={ButtonNext} />
         </TouchableOpacity>
       </View>

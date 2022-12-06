@@ -1,8 +1,9 @@
 //lib
 import { View, Text, Image, Button, TouchableOpacity } from "react-native";
-import React, { memo, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import SmoothPicker from "react-native-smooth-picker";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 //style
 import styles from "../styles/style";
 import typo from "../styles/typography";
@@ -14,7 +15,9 @@ import ButtonBack from "../assets/Button_back.png";
 import ButtonNext from "../assets/Button_Setting_5.png";
 import textInput from "../styles/textInput";
 
-const array = Array.from({length: 200}, (_, i) => i + 1)
+let STORAGE_KEY = '@weight';
+
+const array = Array.from({ length: 200 }, (_, i) => i + 1);
 const opacities = {
   0: 1,
   1: 1,
@@ -71,12 +74,20 @@ const ItemToRender = ({ item, index }, indexSelected, vertical) => {
 };
 
 const SettingWeight = () => {
+  const [selected, setSelected] = useState(50);
+
+  const saveData = async () => {
+    try {
+      await AsyncStorage.setItem(STORAGE_KEY, (selected + 1).toString())
+    } catch (e) {
+    }
+  }
+
   const navigation = useNavigation();
   function handleChange(index) {
     setSelected(index);
+    // saveData();
   }
-
-  const [selected, setSelected] = useState(1);
 
   return (
     <View style={styles.container}>
@@ -91,8 +102,8 @@ const SettingWeight = () => {
           <Text style={colors.primaryColor}>Cân nặng</Text> của bạn là?
         </Text>
         <Text style={[spacing.space_ver_3, textInput.settingText]}>
-          Để có thể cho bạn lời khuyên tốt nhất, hãy cho chúng tôi biết cân nặng của
-          bạn.
+          Để có thể cho bạn lời khuyên tốt nhất, hãy cho chúng tôi biết cân nặng
+          của bạn.
         </Text>
       </View>
       <View style={styles.innerSettingAge}>
@@ -112,7 +123,9 @@ const SettingWeight = () => {
         </View>
       </View>
       <View style={styles.bottomSetting}>
-        <TouchableOpacity onPress={() => navigation.navigate('SettingPractice')}>
+        <TouchableOpacity
+          onPress={() => [navigation.navigate("SettingPractice"), saveData()]}
+        >
           <Image source={ButtonNext} />
         </TouchableOpacity>
       </View>

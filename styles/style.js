@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
   },
   headerSetting: {
     flex: 1,
-    width: "80%",
+    width: "88%",
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "column",
@@ -175,10 +175,30 @@ const styles = StyleSheet.create({
   },
   innerAnalysis: {
     flex: 1,
-    width: '80%',
+    width: "80%",
     alignItems: "center",
     justifyContent: "flex-start",
     textAlign: "center",
+  },
+
+  headerAnalysisBMI: {
+    flex: 1,
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
+    textAlign: "left",
+    width: "100%",
+  },
+  innerAnalysisBMI: {
+    flex: 3,
+    backgroundColor: 'rgba(246, 247, 247, 0.9)',
+    alignItems: "center",
+    justifyContent: "flex-start",
+    textAlign: "center",
+    borderColor: '#F6F7F7',
+    borderWidth: 4,
+    width: '100%',
+    padding: '8%',
+    borderRadius: 32
   },
 });
 export default styles;

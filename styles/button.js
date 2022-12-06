@@ -27,6 +27,13 @@ const colors = StyleSheet.create({
     position: "absolute",
     top: '8%',
     left: 0
+  },
+  settingAnalysisButton: {
+    backgroundColor: '#276047',
+    width: '100%',
+    padding: 24,
+    borderRadius: 12,
+    marginTop: 120
   }
 });
 export default colors;

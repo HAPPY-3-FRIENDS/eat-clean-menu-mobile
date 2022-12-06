@@ -1,6 +1,8 @@
 //lib
 import { View, Text, Image, Button } from 'react-native'
 import React, { useEffect } from 'react'
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
 //style
 import styles from "../styles/style"
 import typo from "../styles/typography"
@@ -12,9 +14,19 @@ import { useNavigation } from '@react-navigation/native'
 
 const Home = () => {
   const navigation = useNavigation();
+
+  const clearStorage = async () => {
+    try {
+      await AsyncStorage.clear();
+    } catch (e) {
+      alert('Failed to clear the async storage.');
+    }
+  };
+
   useEffect(() => {
+    clearStorage();
     setTimeout(() => {
-      navigation.navigate('IntroFirst')
+      navigation.navigate('IntroFirst');
     }, 5000);
   }, []);
   return (

@@ -11,7 +11,23 @@ const textInput = StyleSheet.create({
     flexDirection: "row",
   },
   settingText: {
-    textAlign: "center"
+    textAlign: "center",
+  },
+  settingTextAnalysisGroup: {
+    flexDirection: "column",
+    backgroundColor: '#24B445',
+    width: '100%',
+    padding: 16,
+    borderRadius: 8
+  },
+  settingTextAnalysis: {
+    flexDirection: "row",
+    justifyContent: 'space-between',
+  },
+  settingTextAnalysisBMRGroup: {
+    flexDirection: "column",
+    width: '100%',
+    borderRadius: 8
   },
 });
 export default textInput;
