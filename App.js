@@ -18,6 +18,7 @@ import SettingPractice from "./components/SettingPractice";
 import Analysis from "./components/Analysis";
 import AnalysisBMI from "./components/AnalysisBMI";
 import Payment from "./components/Payment";
+import DailyMenu from "./components/DailyMenu";
 
 const Stack = createNativeStackNavigator();
 
@@ -140,6 +141,14 @@ export default function App() {
         <Stack.Screen
           name="Payment"
           component={Payment}
+          options={{ title: '' }}
+          screenOptions={{
+            fullScreenGestureEnabled:true
+          }}
+        />
+        <Stack.Screen
+          name="DailyMenu"
+          component={DailyMenu}
           options={{ title: '' }}
           screenOptions={{
             fullScreenGestureEnabled:true

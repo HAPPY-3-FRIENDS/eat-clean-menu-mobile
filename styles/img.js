@@ -14,11 +14,11 @@ const img = StyleSheet.create({
     zIndex: 999,
     left: '8%',
   },
-  // imgInforAnalysisIcon: {
-  //   position: "absolute",
-  //   zIndex: 999,
-  //   left: 25,
-  //   top: 25
-  // },
+  imgDailyAva: {
+    width: 32,
+    height: 32,
+    borderRadius: 100,
+  },
+
 });
 export default img;

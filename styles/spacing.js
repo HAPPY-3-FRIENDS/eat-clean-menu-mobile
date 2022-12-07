@@ -18,5 +18,23 @@ const spacing = StyleSheet.create({
   spaceBottom_ver_3: {
     marginBottom: 8
   },
+  spaceLeft_ver_1: {
+    marginLeft: 32
+  },
+  spaceLeft_ver_2: {
+    marginLeft: 16
+  },
+  spaceLeft_ver_3: {
+    marginLeft: 8
+  },
+  spaceRight_ver_1: {
+    marginRight: 32
+  },
+  spaceRight_ver_2: {
+    marginRight: 16
+  },
+  spaceRight_ver_3: {
+    marginRight: 8
+  },
 });
 export default spacing;

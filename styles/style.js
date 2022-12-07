@@ -190,15 +190,15 @@ const styles = StyleSheet.create({
   },
   innerAnalysisBMI: {
     flex: 3,
-    backgroundColor: 'rgba(246, 247, 247, 0.9)',
+    backgroundColor: "rgba(246, 247, 247, 0.9)",
     alignItems: "center",
     justifyContent: "flex-start",
     textAlign: "center",
-    borderColor: '#F6F7F7',
+    borderColor: "#F6F7F7",
     borderWidth: 4,
-    width: '100%',
-    padding: '8%',
-    borderRadius: 32
+    width: "100%",
+    padding: "8%",
+    borderRadius: 32,
   },
 
   headerPayment: {
@@ -210,13 +210,44 @@ const styles = StyleSheet.create({
   },
   innerPayment: {
     flex: 3,
-    backgroundColor: 'rgba(36, 180, 69, 0.8)',
+    backgroundColor: "rgba(36, 180, 69, 0.8)",
     alignItems: "center",
     justifyContent: "flex-start",
     textAlign: "center",
-    width: '100%',
-    padding: '8%',
-    borderRadius: 32
+    width: "100%",
+    padding: "8%",
+    borderRadius: 32,
+  },
+
+  headerDailyMenu: {
+    flex: 1,
+    alignItems: "flex-start",
+    justifyContent: "space-between",
+    width: "88%",
+    height: '20%',
+    flexDirection: "row",
+    marginTop: 56,
+  },
+  headerDailyMenuIcon: {
+    flexDirection: "row",
+  },
+  innerDailyMenu: {
+    flex: 1,
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
+    flexDirection: "row",
+    width: "100%",
+  },
+  innerDailyMenuCalendar: {
+    width: "100%",
+    height: 100,
+    paddingTop: 20,
+    paddingBottom: 10,
+  },
+  bottomDailyMenuCalendar: {
+    flex: 12,
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
   },
 });
 export default styles;

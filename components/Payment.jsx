@@ -218,7 +218,7 @@ const Payment = () => {
           <Text style={typo.subTextBold}> Điều khoản và Điều kiện</Text>
         </Text>
         {activeOneMonth || activeThreeMonth || activeTwelveMonth ? (
-          <TouchableOpacity style={button.settingPaymentButton}>
+          <TouchableOpacity onPress={() => navigation.navigate('DailyMenu')} style={button.settingPaymentButton}>
             <Text style={[typo.textBold, textInput.settingText, colors.wColor]}>
               Tiếp tục
             </Text>
