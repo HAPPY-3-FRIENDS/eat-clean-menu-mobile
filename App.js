@@ -17,6 +17,7 @@ import SettingWeight from "./components/SettingWeight";
 import SettingPractice from "./components/SettingPractice";
 import Analysis from "./components/Analysis";
 import AnalysisBMI from "./components/AnalysisBMI";
+import Payment from "./components/Payment";
 
 const Stack = createNativeStackNavigator();
 
@@ -131,6 +132,14 @@ export default function App() {
         <Stack.Screen
           name="AnalysisBMI"
           component={AnalysisBMI}
+          options={{ title: '' }}
+          screenOptions={{
+            fullScreenGestureEnabled:true
+          }}
+        />
+        <Stack.Screen
+          name="Payment"
+          component={Payment}
           options={{ title: '' }}
           screenOptions={{
             fullScreenGestureEnabled:true

@@ -34,6 +34,20 @@ const colors = StyleSheet.create({
     padding: 24,
     borderRadius: 12,
     marginTop: 120
+  },
+  settingPaymentButton: {
+    backgroundColor: '#276047',
+    width: '100%',
+    padding: 24,
+    borderRadius: 12,
+    marginTop: 24
+  },
+  settingPaymentButtonInactive: {
+    backgroundColor: 'rgba(39, 96, 71, 0.3)',
+    width: '100%',
+    padding: 24,
+    borderRadius: 12,
+    marginTop: 24
   }
 });
 export default colors;

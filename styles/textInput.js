@@ -29,5 +29,47 @@ const textInput = StyleSheet.create({
     width: '100%',
     borderRadius: 8
   },
+
+  settingTextPaymentGroup: {
+    flexDirection: "column",
+    backgroundColor: '#E1FFED',
+    width: '100%',
+    padding: 12,
+    borderRadius: 16
+  },
+
+  settingTextPaymentGroupActive: {
+    flexDirection: "column",
+    backgroundColor: '#A1F5C3',
+    width: '100%',
+    padding: 12,
+    borderRadius: 16
+  },
+  
+  settingTextPayment: {
+    flexDirection: "row",
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  settingTextPaymentBMRGroup: {
+    flexDirection: "column",
+    width: '100%',
+    borderRadius: 8
+  },
+
+  subtextPayment: {
+    width: '88%'
+  },
+  textPaymentLeft: {
+    width: '56%',
+    textAlign: "left"
+  },
+  textPaymentRight: {
+    width: '44%',
+    textAlign: "right"
+  },
+  settingTextPaymentOneMonth: {
+    alignItems: 'flex-end',
+  },
 });
 export default textInput;

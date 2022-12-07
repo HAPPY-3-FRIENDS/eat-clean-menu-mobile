@@ -17,7 +17,7 @@ import textInput from "../styles/textInput";
 
 let STORAGE_KEY = '@weight';
 
-const array = Array.from({ length: 200 }, (_, i) => i + 1);
+const array = Array.from({ length: 200 }, (_, i) => i + 5);
 const opacities = {
   0: 1,
   1: 1,
@@ -74,11 +74,11 @@ const ItemToRender = ({ item, index }, indexSelected, vertical) => {
 };
 
 const SettingWeight = () => {
-  const [selected, setSelected] = useState(50);
+  const [selected, setSelected] = useState(46);
 
   const saveData = async () => {
     try {
-      await AsyncStorage.setItem(STORAGE_KEY, (selected + 1).toString())
+      await AsyncStorage.setItem(STORAGE_KEY, (selected + 5).toString())
     } catch (e) {
     }
   }

@@ -18,7 +18,7 @@ import textInput from "../styles/textInput";
 
 let STORAGE_KEY_A = '@age';
 
-const array = Array.from({length: 100}, (_, i) => i + 1)
+const array = Array.from({length: 84}, (_, i) => i + 16)
 const opacities = {
   0: 1,
   1: 1,
@@ -76,7 +76,7 @@ const ItemToRender = ({ item, index }, indexSelected, vertical) => {
 
 
 const SettingAge = () => {
-  const [selected, setSelected] = useState(17);
+  const [selected, setSelected] = useState(0);
   const navigation = useNavigation();
   function handleChange(index) {
     setSelected(index);
@@ -84,7 +84,7 @@ const SettingAge = () => {
 
   const saveData = async () => {
     try {
-      await AsyncStorage.setItem(STORAGE_KEY_A, (selected + 1).toString())
+      await AsyncStorage.setItem(STORAGE_KEY_A, (selected + 16).toString())
     } catch (e) {
     }
   }

@@ -200,5 +200,23 @@ const styles = StyleSheet.create({
     padding: '8%',
     borderRadius: 32
   },
+
+  headerPayment: {
+    flex: 1,
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
+    textAlign: "left",
+    width: "100%",
+  },
+  innerPayment: {
+    flex: 3,
+    backgroundColor: 'rgba(36, 180, 69, 0.8)',
+    alignItems: "center",
+    justifyContent: "flex-start",
+    textAlign: "center",
+    width: '100%',
+    padding: '8%',
+    borderRadius: 32
+  },
 });
 export default styles;

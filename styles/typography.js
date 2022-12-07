@@ -30,5 +30,11 @@ const typos = StyleSheet.create({
     fontFamily: 'sans-serif',
     fontWeight: '100'
   },
+
+  subTextBold: {
+    fontSize: 12,
+    fontFamily: 'sans-serif',
+    fontWeight: 'bold'
+  },
 });
 export default typos;

@@ -27,19 +27,22 @@ const AnalysisBMI = () => {
   const [weight, setWeight] = useState(0);
   const [height, setHeight] = useState(0);
   const [age, setAge] = useState(0);
-  const [gender, setGender] = useState('');
+  const [gender, setGender] = useState("");
 
   const BMI = weight / (((height / 100) * height) / 100);
 
   //Đối với nam giới: BMR = 66 + (13,7 x trọng lượng) + (5 x chiều cao) – (6,8 x tuổi).
-  const BMRMale = 66 + (13.7 * weight) + (5 * height) - (6.8 * age);
+  const BMRMale =
+    Math.round((66 + 13.7 * weight + 5 * height - 6.8 * age) * 100) / 100;
 
   //Đối với phụ nữ: BMR = 655 + (9,6 x trọng lượng) + (1,8 x chiều cao) – (4,7 x tuổi).
-  const BMRFemale = 655 + (9.6 * weight) + (1.8 * height) - (4.7 * age);
+  const BMRFemale =
+    Math.round((655 + 9.6 * weight + 1.8 * height - 4.7 * age) * 100) / 100;
 
   const readWeight = async () => {
     try {
       const value = await AsyncStorage.getItem(STORAGE_KEY);
+      console.log(value);
 
       if (value !== null) {
         setWeight(value);
@@ -51,6 +54,7 @@ const AnalysisBMI = () => {
   const readHeight = async () => {
     try {
       const value = await AsyncStorage.getItem(STORAGE_KEY_H);
+      console.log(value);
 
       if (value !== null) {
         setHeight(value);
@@ -63,7 +67,7 @@ const AnalysisBMI = () => {
   const readAge = async () => {
     try {
       const value = await AsyncStorage.getItem(STORAGE_KEY_A);
-        console.log(age)
+      console.log('age' + value);
       if (value !== null) {
         setAge(value);
       }
@@ -75,7 +79,7 @@ const AnalysisBMI = () => {
   const readGender = async () => {
     try {
       const value = await AsyncStorage.getItem(STORAGE_KEY_G);
-      console.log(value)
+      console.log(value);
 
       if (value !== null) {
         setGender(value);
@@ -146,12 +150,12 @@ const AnalysisBMI = () => {
                 BMR
               </Text>
               <Text style={[typo.text, textInput.settingText, colors.wColor]}>
-                {gender === 'Nam' ? BMRMale : BMRFemale}
+                {gender === "Nam" ? BMRMale : BMRFemale}
               </Text>
             </View>
           </View>
         </View>
-        <TouchableOpacity style={button.settingAnalysisButton}>
+        <TouchableOpacity onPress={() => navigation.navigate('Payment')} style={button.settingAnalysisButton}>
           <Text style={[typo.textBold, textInput.settingText, colors.wColor]}>
             Tiếp tục
           </Text>
