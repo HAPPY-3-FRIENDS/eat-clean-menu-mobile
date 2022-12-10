@@ -20,5 +20,13 @@ const img = StyleSheet.create({
     borderRadius: 100,
   },
 
+  imgDish: {
+    width: 178,
+    height: 178,
+    borderRadius: 100,
+    marginLeft: '56%',
+    marginBottom: '-32%',
+  },
+
 });
 export default img;

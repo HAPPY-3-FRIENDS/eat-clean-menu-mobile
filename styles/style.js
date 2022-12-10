@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
-    flex: 6,
+    flex: 1,
     backgroundColor: "#FCFCFC",
     alignItems: "center",
     justifyContent: "center",
@@ -220,34 +220,87 @@ const styles = StyleSheet.create({
   },
 
   headerDailyMenu: {
-    flex: 1,
-    alignItems: "flex-start",
+    flex: 0.5,
+    alignItems: "flex-end",
     justifyContent: "space-between",
     width: "88%",
-    height: '20%',
     flexDirection: "row",
-    marginTop: 56,
   },
   headerDailyMenuIcon: {
     flexDirection: "row",
   },
   innerDailyMenu: {
-    flex: 1,
+    flex: 0.5,
     alignItems: "flex-start",
     justifyContent: "flex-start",
     flexDirection: "row",
     width: "100%",
   },
+  innerSubDailyMenu: {
+    flex: 0.25,
+    alignItems: "center",
+    justifyContent: "space-between",
+    flexDirection: "row",
+    width: "100%",
+    padding: 8,
+    borderTopColor: '#DEDEDE',
+    borderBottomColor: '#DEDEDE',
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
+  },
+
+  innerSubDailyText: {
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "column",
+    width: "100%",
+    padding: 8
+  },
+
+  innerSubDailyDish: {
+    height: 200,
+    alignItems: "flex-start",
+    justifyContent: "flex-end",
+    flexDirection: "column",
+    width: "88%",
+    backgroundColor: '#FFF',
+    marginBottom: 16,
+    borderRadius: 16,
+    overflow: 'hidden',
+    paddingLeft: 24,
+    paddingBottom: 24,
+    marginLeft: 12
+  },
+
+  innerSubDailyDishTextBorder: {
+    borderBottomColor: 'rgba(0, 0, 0, 0.07)',
+    borderBottomWidth: 1,
+    paddingBottom: 8
+  },
+
+  innerSubDailyTextBorder: {
+    borderBottomColor: '#FF6810',
+    borderBottomWidth: 2,
+    position: "absolute",
+    zIndex: 999,
+    width: 120,
+    top: 20,
+    left: 32
+  },
+
   innerDailyMenuCalendar: {
     width: "100%",
     height: 100,
     paddingTop: 20,
     paddingBottom: 10,
   },
+  
   bottomDailyMenuCalendar: {
-    flex: 12,
-    alignItems: "flex-start",
-    justifyContent: "flex-start",
+    flex: 3,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: '#F9F9F9',
+    width: '96%'
   },
 });
 export default styles;

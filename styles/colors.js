@@ -15,5 +15,11 @@ const colors = StyleSheet.create({
   wColor: {
     color: '#FFF'
   },
+  oColor: {
+    color: '#FF6810'
+  },
+  gColor: {
+    color: 'rgba(90, 90, 90, 0.8)'
+  }
 });
 export default colors;

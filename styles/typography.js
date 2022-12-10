@@ -12,8 +12,15 @@ const typos = StyleSheet.create({
     fontWeight: 'bold'
   },
   subtitleLight: {
-    fontSize: 26,
+    fontSize: 24,
     fontFamily: 'sans-serif',
+  },
+
+  textItalic: {
+    fontSize: 16,
+    fontFamily: 'sans-serif',
+    fontWeight: 'normal',
+    fontStyle: "italic"
   },
   text: {
     fontSize: 16,
