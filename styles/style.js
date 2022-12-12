@@ -243,8 +243,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "100%",
     padding: 8,
-    borderTopColor: '#DEDEDE',
-    borderBottomColor: '#DEDEDE',
+    borderTopColor: "#DEDEDE",
+    borderBottomColor: "#DEDEDE",
     borderTopWidth: 1,
     borderBottomWidth: 1,
   },
@@ -254,7 +254,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     flexDirection: "column",
     width: "100%",
-    padding: 8
+    padding: 8,
   },
 
   innerSubDailyDish: {
@@ -263,29 +263,29 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
     flexDirection: "column",
     width: "88%",
-    backgroundColor: '#FFF',
+    backgroundColor: "#FFF",
     marginBottom: 16,
     borderRadius: 16,
-    overflow: 'hidden',
+    overflow: "hidden",
     paddingLeft: 24,
     paddingBottom: 24,
-    marginLeft: 12
+    marginLeft: 12,
   },
 
   innerSubDailyDishTextBorder: {
-    borderBottomColor: 'rgba(0, 0, 0, 0.07)',
+    borderBottomColor: "rgba(0, 0, 0, 0.07)",
     borderBottomWidth: 1,
-    paddingBottom: 8
+    paddingBottom: 8,
   },
 
   innerSubDailyTextBorder: {
-    borderBottomColor: '#FF6810',
+    borderBottomColor: "#FF6810",
     borderBottomWidth: 2,
     position: "absolute",
     zIndex: 999,
     width: 120,
     top: 20,
-    left: 32
+    left: 32,
   },
 
   innerDailyMenuCalendar: {
@@ -294,13 +294,66 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     paddingBottom: 10,
   },
-  
+
   bottomDailyMenuCalendar: {
     flex: 3,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: '#F9F9F9',
-    width: '96%'
+    backgroundColor: "#F9F9F9",
+    width: "96%",
+  },
+
+  headerMeal: {
+    flex: 0.5,
+    alignItems: "center",
+    width: "88%",
+    flexDirection: "row",
+    marginTop: 48,
+  },
+
+  innerMeal: {
+    flex: 1.5,
+    alignItems: "flex-start",
+    width: "100%",
+  },
+
+  bottomMeal: {
+    flex: 4,
+    alignItems: "center",
+    width: "100%",
+    backgroundColor: "#FFF",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 6,
+    },
+    shadowOpacity: 0.37,
+    shadowRadius: 7.49,
+    elevation: 12,
+    borderTopLeftRadius: 24,
+    borderTopRightRadius: 24,
+  },
+  innerBottomMealContainer: {
+    justifyContent: "flex-start",
+    width: '80%',
+    height: 320,
+    marginTop: 24,
+  },
+  innerBottomMeal: {
+    justifyContent: "space-between",
+    flexDirection: 'row',
+  },
+
+  innerBottomMealStepContainer: {
+    justifyContent: "center",
+    width: '64%',
+    flexDirection: 'row',
+  },
+
+  innerBottomMealButton: {
+    justifyContent: "center",
+    flexDirection: 'row',
+    width: '100%',
   },
 });
 export default styles;

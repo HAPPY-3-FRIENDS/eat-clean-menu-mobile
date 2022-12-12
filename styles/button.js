@@ -48,6 +48,36 @@ const colors = StyleSheet.create({
     padding: 24,
     borderRadius: 12,
     marginTop: 24
-  }
+  },
+
+  mealStepButton: {
+    padding: 8,
+    borderRadius: 100,
+    borderWidth: 1,
+    borderColor: '#000'
+  },
+
+  mealStepButtonActive: {
+    padding: 8,
+    borderRadius: 100,
+    borderWidth: 1,
+    borderColor: '#000',
+    backgroundColor: '#24B445',
+  },
+
+  mealStepLeftButton: {
+    backgroundColor: 'rgba(36, 180, 69, 0.5)',
+    width: '40%',
+    alignItems: "center",
+    padding: 16,
+    borderRadius: 12,
+  },
+  mealStepRightButton: {
+    backgroundColor: '#24B445',
+    width: '60%',
+    alignItems: "center",
+    padding: 16,
+    borderRadius: 12,
+  },
 });
 export default colors;

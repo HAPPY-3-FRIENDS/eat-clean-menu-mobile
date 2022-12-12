@@ -119,7 +119,7 @@ const DailyMenu = () => {
           </Text>
         </View>
         <ScrollView showsVerticalScrollIndicator={false} style={{ flex: 1 }}>
-          <TouchableOpacity style={[styles.innerSubDailyDish, spacing.space_ver_2]}>
+          <TouchableOpacity onPress={() => navigation.navigate('Meal')} style={[styles.innerSubDailyDish, spacing.space_ver_2]}>
             <Image style={img.imgDish} source={Dish1} />
             <View>
               <Text
@@ -140,7 +140,7 @@ const DailyMenu = () => {
               <Progress.Bar progress={1} color="rgba(36, 180, 69, 0.1)" />
             </View>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.innerSubDailyDish}>
+          <TouchableOpacity onPress={() => navigation.navigate('Meal')} style={styles.innerSubDailyDish}>
             <Image style={img.imgDish} source={Dish1} />
             <View>
               <Text
@@ -150,7 +150,7 @@ const DailyMenu = () => {
                   spacing.spaceBottom_ver_2,
                 ]}
               >
-                Bữa sáng
+                Bữa trưa
               </Text>
               <Text style={[typo.textItalic, spacing.spaceBottom_ver_2]}>
                 Salad gà bơ bánh mì
@@ -161,7 +161,7 @@ const DailyMenu = () => {
               <Progress.Bar progress={1} color="rgba(36, 180, 69, 0.1)" />
             </View>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.innerSubDailyDish}>
+          <TouchableOpacity onPress={() => navigation.navigate('Meal')} style={styles.innerSubDailyDish}>
             <Image style={img.imgDish} source={Dish1} />
             <View>
               <Text
@@ -171,7 +171,7 @@ const DailyMenu = () => {
                   spacing.spaceBottom_ver_2,
                 ]}
               >
-                Bữa sáng
+                Bữa tối
               </Text>
               <Text style={[typo.textItalic, spacing.spaceBottom_ver_2]}>
                 Salad gà bơ bánh mì
