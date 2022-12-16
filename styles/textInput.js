@@ -71,5 +71,13 @@ const textInput = StyleSheet.create({
   settingTextPaymentOneMonth: {
     alignItems: 'flex-end',
   },
+
+  settingTextNoti: {
+  },
+
+  settingTextNotiActive: {
+    borderBottomColor: '#24B445',
+    borderBottomWidth: 1,
+  },
 });
 export default textInput;

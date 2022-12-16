@@ -88,7 +88,7 @@ const MealStep = () => {
               <Text style={[typo.textBold, colors.wColor]}>Quay lại</Text>
             </TouchableOpacity>
             <TouchableOpacity style={button.mealStepRightButton}>
-              <Text style={[typo.textBold, colors.wColor]}>Bắt đầu</Text>
+              <Text style={[typo.textBold, colors.wColor]}>Tiếp tục</Text>
             </TouchableOpacity>
           </View>
         </View>

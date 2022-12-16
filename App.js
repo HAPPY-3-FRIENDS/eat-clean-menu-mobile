@@ -21,6 +21,9 @@ import Payment from "./components/Payment";
 import DailyMenu from "./components/DailyMenu";
 import Meal from "./components/Meal";
 import MealStep from "./components/MealStep";
+import Notification from "./components/Notification";
+import NotificationTips from "./components/NotificationTips";
+import Tips from "./components/Tips";
 
 const Stack = createNativeStackNavigator();
 
@@ -167,6 +170,30 @@ export default function App() {
         <Stack.Screen
           name="MealStep"
           component={MealStep}
+          options={{ title: '' }}
+          screenOptions={{
+            fullScreenGestureEnabled:true
+          }}
+        />
+        <Stack.Screen
+          name="Notification"
+          component={Notification}
+          options={{ title: '' }}
+          screenOptions={{
+            fullScreenGestureEnabled:true
+          }}
+        />
+        <Stack.Screen
+          name="NotificationTips"
+          component={NotificationTips}
+          options={{ title: '' }}
+          screenOptions={{
+            fullScreenGestureEnabled:true
+          }}
+        />
+        <Stack.Screen
+          name="Tips"
+          component={Tips}
           options={{ title: '' }}
           screenOptions={{
             fullScreenGestureEnabled:true

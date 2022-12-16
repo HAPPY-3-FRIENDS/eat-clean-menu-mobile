@@ -31,7 +31,7 @@ const img = StyleSheet.create({
   imgMeal: {
     width: '100%',
     height: 200,
-    resizeMode: "stretch"
+    resizeMode: "stretch",
   },
 
 });

@@ -336,7 +336,7 @@ const styles = StyleSheet.create({
   innerBottomMealContainer: {
     justifyContent: "flex-start",
     width: '80%',
-    height: 320,
+    height: 360,
     marginTop: 24,
   },
   innerBottomMeal: {
@@ -355,5 +355,70 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: '100%',
   },
+
+  headerNoti: {
+    flex: 0.5,
+    alignItems: "flex-end",
+    justifyContent: "space-between",
+    width: "88%",
+    flexDirection: "row",
+    marginTop: 24,
+  },
+  subHeaderNoti: {
+    flex: 0.25,
+    alignItems: "center",
+    justifyContent: "flex-start",
+    width: "100%",
+    flexDirection: "row",
+    marginTop: 32,
+  },
+  innerNoti: {
+    flex: 5,
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
+    width: "96%",
+    flexDirection: "column",
+  },
+  innerNotiInfo: {
+    alignItems: "center",
+    justifyContent: "space-between",
+    flexDirection: "row",
+  },
+  innerNotiInfoText: {
+    borderBottomColor: 'rgba(0, 0, 0, 0.1)',
+    borderBottomWidth: 1,
+    width: '64%',
+    paddingBottom: 16,
+    paddingTop: 16,
+    paddingLeft: 8
+  },
+
+  innerTipsContainer: {
+    flex: 4.5,
+    alignItems: "center",
+    justifyContent: "center",
+    width: "100%",
+    flexDirection: "column",
+    marginTop: '8%'
+  },
+
+  subHeaderTips: {
+    flex: 1.5,
+    alignItems: "center",
+    justifyContent: "flex-start",
+    width: "100%",
+    flexDirection: "row",
+  },
+  innerTips: {
+    flex: 3.5,
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
+    width: "88%",
+    marginLeft: '6%',
+    flexDirection: "column",
+    marginBottom: '8%',
+    marginTop: '4%',
+  },
+
 });
 export default styles;

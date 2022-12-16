@@ -49,11 +49,11 @@ const Analysis = () => {
     }
   }, [progress]);
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     navigation.navigate('AnalysisBMI')
-  //   }, 5000);
-  // }, []);
+  useEffect(() => {
+    setTimeout(() => {
+      navigation.navigate('AnalysisBMI')
+    }, 5000);
+  }, []);
 
   return (
     <View style={styles.container}>

@@ -23,12 +23,13 @@ const Home = () => {
     }
   };
 
-  // useEffect(() => {
-  //   clearStorage();
-  //   setTimeout(() => {
-  //     navigation.navigate('IntroFirst');
-  //   }, 5000);
-  // }, []);
+  useEffect(() => {
+    clearStorage();
+    setTimeout(() => {
+      navigation.navigate('IntroFirst');
+    }, 5000);
+  }, []);
+  
   return (
     <View style={styles.container}>
       <Image source={Icon} />

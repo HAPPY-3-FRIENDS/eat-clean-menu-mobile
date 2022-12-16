@@ -47,7 +47,7 @@ const DailyMenu = () => {
           <TouchableOpacity>
             <Image style={spacing.spaceRight_ver_3} source={Statistic} />
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Notification')}>
             <Image source={Noti} />
           </TouchableOpacity>
         </View>
