@@ -79,5 +79,22 @@ const textInput = StyleSheet.create({
     borderBottomColor: '#24B445',
     borderBottomWidth: 1,
   },
+
+  settingTextAnalysisHomeActive: {
+    backgroundColor: '#24B445',
+    color: '#FFF',
+    paddingTop: 8,
+    paddingBottom: 8,
+    paddingLeft: 36,
+    paddingRight: 36,
+    borderRadius: 4
+  },
+  settingTextAnalysisHome: {
+    color: '#FFF',
+    paddingTop: 8,
+    paddingBottom: 8,
+    paddingLeft: 36,
+    paddingRight: 36,
+  },
 });
 export default textInput;

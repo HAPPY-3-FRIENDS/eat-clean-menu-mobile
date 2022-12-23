@@ -8,26 +8,26 @@ const typos = StyleSheet.create({
     letterSpacing: 0.4
   },
   subtitle: {
-    fontSize: 24,
+    fontSize: 22,
     fontFamily: "sans-serif",
     fontWeight: "bold",
     letterSpacing: 0.4
   },
   subtitleItalic: {
-    fontSize: 24,
+    fontSize: 22,
     fontFamily: "sans-serif",
     fontWeight: "bold",
     fontStyle: "italic",
     letterSpacing: 0.4
   },
   subtitleLight: {
-    fontSize: 24,
+    fontSize: 22,
     fontFamily: "sans-serif",
     letterSpacing: 0.4
   },
 
   textItalic: {
-    fontSize: 16,
+    fontSize: 14,
     fontFamily: "sans-serif",
     fontWeight: "normal",
     fontStyle: "italic",
@@ -42,13 +42,13 @@ const typos = StyleSheet.create({
     lineHeight: 24
   },
   textBold: {
-    fontSize: 16,
+    fontSize: 14,
     fontFamily: "sans-serif",
     fontWeight: "bold",
     letterSpacing: 0.4
   },
   textBoldItalic: {
-    fontSize: 16,
+    fontSize: 14,
     fontFamily: "sans-serif",
     fontWeight: "bold",
     fontStyle: "italic",
@@ -66,6 +66,14 @@ const typos = StyleSheet.create({
     fontFamily: "sans-serif",
     fontWeight: "bold",
     letterSpacing: 0.4
+  },
+
+  subTextBoldItalic: {
+    fontSize: 12,
+    fontFamily: "sans-serif",
+    fontWeight: "bold",
+    letterSpacing: 0.4,
+    fontStyle: "italic",
   },
 });
 export default typos;

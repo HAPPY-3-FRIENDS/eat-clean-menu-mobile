@@ -79,5 +79,23 @@ const colors = StyleSheet.create({
     padding: 16,
     borderRadius: 12,
   },
+
+  HomeInformationButton: {
+    borderColor: "rgba(0, 0, 0, 0.2)",
+    borderWidth: 1,
+    borderRadius: 8,
+    padding: 16,
+    backgroundColor: '#FFF',
+    marginTop: 24, 
+    marginBottom: 32
+  },
+
+  EditInformationButton: {
+    backgroundColor: 'rgba(36, 180, 69, 0.8)',
+    width: '86%',
+    padding: 16,
+    borderRadius: 12,
+    marginTop: 40
+  },
 });
 export default colors;

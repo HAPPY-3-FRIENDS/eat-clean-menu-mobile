@@ -89,12 +89,12 @@ const AnalysisBMI = () => {
     }
   };
 
-  // useEffect(() => {
-  //   readWeight();
-  //   readHeight();
-  //   readAge();
-  //   readGender();
-  // }, []);
+  useEffect(() => {
+    readWeight();
+    readHeight();
+    readAge();
+    readGender();
+  }, []);
 
   return (
     <View style={styles.container}>

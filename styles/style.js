@@ -223,7 +223,7 @@ const styles = StyleSheet.create({
     flex: 0.5,
     alignItems: "flex-end",
     justifyContent: "space-between",
-    width: "88%",
+    width: "92%",
     flexDirection: "row",
   },
   headerDailyMenuIcon: {
@@ -335,25 +335,25 @@ const styles = StyleSheet.create({
   },
   innerBottomMealContainer: {
     justifyContent: "flex-start",
-    width: '80%',
+    width: "80%",
     height: 360,
     marginTop: 24,
   },
   innerBottomMeal: {
     justifyContent: "space-between",
-    flexDirection: 'row',
+    flexDirection: "row",
   },
 
   innerBottomMealStepContainer: {
     justifyContent: "center",
-    width: '64%',
-    flexDirection: 'row',
+    width: "64%",
+    flexDirection: "row",
   },
 
   innerBottomMealButton: {
     justifyContent: "center",
-    flexDirection: 'row',
-    width: '100%',
+    flexDirection: "row",
+    width: "100%",
   },
 
   headerNoti: {
@@ -385,12 +385,12 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   innerNotiInfoText: {
-    borderBottomColor: 'rgba(0, 0, 0, 0.1)',
+    borderBottomColor: "rgba(0, 0, 0, 0.1)",
     borderBottomWidth: 1,
-    width: '64%',
+    width: "64%",
     paddingBottom: 16,
     paddingTop: 16,
-    paddingLeft: 8
+    paddingLeft: 8,
   },
 
   innerTipsContainer: {
@@ -399,7 +399,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     width: "100%",
     flexDirection: "column",
-    marginTop: '8%'
+    marginTop: "8%",
   },
 
   subHeaderTips: {
@@ -414,11 +414,176 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     justifyContent: "flex-start",
     width: "88%",
-    marginLeft: '6%',
+    marginLeft: "6%",
     flexDirection: "column",
-    marginBottom: '8%',
-    marginTop: '4%',
+    marginBottom: "8%",
+    marginTop: "4%",
   },
 
+  headerAnalysisHome: {
+    flex: 1,
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
+    width: "100%",
+  },
+  subHeaderAnalysisHome: {
+    position: "absolute",
+    alignItems: "center",
+    justifyContent: "space-between",
+    flexDirection: "row",
+    top: "40%",
+    left: "8%",
+    width: "52%",
+  },
+
+  innerAnalysisHome: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    width: "100%",
+    flexDirection: "column",
+  },
+
+  bottomAnalysisHome: {
+    flex: 3.5,
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
+    width: "100%",
+    flexDirection: "column",
+  },
+  bottomDateAnalysisHome: {
+    alignItems: "flex-start",
+    justifyContent: "space-between",
+    width: "88%",
+    alignSelf: "center",
+    flexDirection: "row",
+    backgroundColor: "rgba(36, 180, 69, 0.5)",
+    borderRadius: 4,
+  },
+
+  headerHomeInformation: {
+    flex: 1,
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
+    width: "100%",
+  },
+  subHeaderHomeInformation: {
+    position: "absolute",
+    alignItems: "center",
+    justifyContent: "space-between",
+    flexDirection: "row",
+    top: "48%",
+    left: "8%",
+    width: "56%",
+  },
+
+  innerHomeInformation: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    width: "100%",
+    flexDirection: "column",
+    marginTop: 36,
+    marginBottom: 56,
+  },
+
+  bottomHomeInformation: {
+    flex: 3.5,
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
+    width: "88%",
+    flexDirection: "column",
+  },
+  bottomHomeInformationPlan: {
+    alignItems: "center",
+    justifyContent: "center",
+    alignSelf: "center",
+    width: "100%",
+    flexDirection: "row",
+    backgroundColor: "rgba(36, 180, 69, 1)",
+    padding: 16,
+    borderRadius: 16,
+  },
+
+  bottomHomeInformationSettingsContainer: {
+    width: "100%",
+    flexDirection: "column",
+    padding: 16,
+    borderColor: "rgba(0, 0, 0, 0.2)",
+    borderWidth: 1,
+    borderRadius: 16,
+    backgroundColor: "#FFF",
+  },
+  bottomHomeInformationSettings: {
+    width: "100%",
+    flexDirection: "row",
+    alignItems: "center",
+  },
+
+  headerEditInformation: {
+    flex: 1,
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
+    width: "100%",
+  },
+  subHeaderEditInformation: {
+    position: "absolute",
+    alignItems: "center",
+    justifyContent: "space-between",
+    flexDirection: "row",
+    top: "48%",
+    left: "8%",
+    width: "70%",
+  },
+
+  innerEditInformation: {
+    flex: 5,
+    alignItems: "center",
+    justifyContent: "flex-start",
+    width: "96%",
+    flexDirection: "column",
+    marginTop: -16
+  },
+  innerEditInformationInput: {
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
+    width: "96%",
+    flexDirection: "column",
+    padding: 8,
+    borderRadius: 12,
+    paddingLeft: 16,
+  },
+
+  innerEditInformationInputProDis: {
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
+    width: "96%",
+    flexDirection: "row",
+    padding: 8,
+    borderRadius: 12,
+    paddingLeft: 16,
+  },
+
+  innerEditInformationInputCalendar: {
+    flexDirection: "row",
+    borderRadius: 12,
+    backgroundColor: "rgba(36, 180, 69, 0.2)",
+    borderRadius: 8,
+    height: 40,
+    width: "96%",
+    paddingLeft: 16,
+    alignItems: "center",
+    justifyContent: 'space-between',
+    paddingRight: 8 
+  },
+
+  innerEditInformationTextInput: {
+    borderRadius: 12,
+    backgroundColor: "rgba(36, 180, 69, 0.2)",
+    borderRadius: 8,
+    height: 40,
+    width: "96%",
+    paddingLeft: 16,
+  },
 });
 export default styles;

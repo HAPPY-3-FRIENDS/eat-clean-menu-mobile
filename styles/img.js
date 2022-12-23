@@ -20,6 +20,19 @@ const img = StyleSheet.create({
     borderRadius: 100,
   },
 
+  imgAnalysisHomeContainer: {
+    padding: 8,
+    borderColor: '#24B445',
+    borderWidth: 2,
+    borderRadius: 100,
+  },
+
+  imgAnalysisHome: {
+    width: 120,
+    height: 120,
+    borderRadius: 100,
+  },
+
   imgDish: {
     width: 178,
     height: 178,

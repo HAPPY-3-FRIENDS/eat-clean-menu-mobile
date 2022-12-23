@@ -24,6 +24,9 @@ import MealStep from "./components/MealStep";
 import Notification from "./components/Notification";
 import NotificationTips from "./components/NotificationTips";
 import Tips from "./components/Tips";
+import AnalysisHome from "./components/AnalysisHome";
+import HomeInformation from "./components/HomeInformation";
+import EditInformation from "./components/EditInformation";
 
 const Stack = createNativeStackNavigator();
 
@@ -194,6 +197,30 @@ export default function App() {
         <Stack.Screen
           name="Tips"
           component={Tips}
+          options={{ title: '' }}
+          screenOptions={{
+            fullScreenGestureEnabled:true
+          }}
+        />
+        <Stack.Screen
+          name="AnalysisHome"
+          component={AnalysisHome}
+          options={{ title: '' }}
+          screenOptions={{
+            fullScreenGestureEnabled:true
+          }}
+        />
+        <Stack.Screen
+          name="HomeInformation"
+          component={HomeInformation}
+          options={{ title: '' }}
+          screenOptions={{
+            fullScreenGestureEnabled:true
+          }}
+        />
+        <Stack.Screen
+          name="EditInformation"
+          component={EditInformation}
           options={{ title: '' }}
           screenOptions={{
             fullScreenGestureEnabled:true

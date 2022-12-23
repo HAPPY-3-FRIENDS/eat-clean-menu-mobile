@@ -37,15 +37,15 @@ const DailyMenu = () => {
   return (
     <View style={styles.container}>
       <View style={styles.headerDailyMenu}>
-        <TouchableOpacity>
+        <TouchableOpacity style={spacing.spaceLeft_ver_3} onPress={() => navigation.navigate('HomeInformation')}>
           <Image style={img.imgDailyAva} source={Ava} />
         </TouchableOpacity>
-        <Text style={[typo.textBold, colors.primaryColor]}>
+        <Text style={[typo.subtitle, colors.primaryColor]}>
           Thực đơn mỗi ngày
         </Text>
         <View style={styles.headerDailyMenuIcon}>
-          <TouchableOpacity>
-            <Image style={spacing.spaceRight_ver_3} source={Statistic} />
+          <TouchableOpacity onPress={() => navigation.navigate('AnalysisHome')}>
+            <Image style={spacing.spaceRight_ver_2} source={Statistic} />
           </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate('Notification')}>
             <Image source={Noti} />
