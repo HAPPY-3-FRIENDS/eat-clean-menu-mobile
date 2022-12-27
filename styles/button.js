@@ -97,5 +97,24 @@ const colors = StyleSheet.create({
     borderRadius: 12,
     marginTop: 40
   },
+
+  InputNewWeight: {
+    backgroundColor: 'rgba(36, 180, 69, 0.8)',
+    width: '96%',
+    padding: 16,
+    borderRadius: 8,
+    margin: 8,
+    alignSelf: "center"
+  },
+
+  updateInputNewWeight: {
+    backgroundColor: 'rgba(36, 180, 69, 1)',
+    width: '32%',
+    padding: 8,
+    borderRadius: 24,
+    margin: 16,
+    marginTop: 32,
+    alignSelf: "center",
+  },
 });
 export default colors;

@@ -446,19 +446,72 @@ const styles = StyleSheet.create({
 
   bottomAnalysisHome: {
     flex: 3.5,
-    alignItems: "flex-start",
-    justifyContent: "flex-start",
+    alignItems: "center",
+    justifyContent: "center",
     width: "100%",
     flexDirection: "column",
   },
   bottomDateAnalysisHome: {
     alignItems: "flex-start",
     justifyContent: "space-between",
-    width: "88%",
+    width: "92%",
     alignSelf: "center",
     flexDirection: "row",
     backgroundColor: "rgba(36, 180, 69, 0.5)",
     borderRadius: 4,
+  },
+
+  innerAnalysisHomeWeightContainerBox: {
+    width: "100%",
+    backgroundColor: "#FFF",
+    marginTop: 8,
+    borderRadius: 8,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+
+    elevation: 5,
+  },
+
+  innerAnalysisHomeCaloriesContainerBox: {
+    width: "92%",
+    backgroundColor: "#FFF",
+    marginTop: 8,
+    borderRadius: 8,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+
+    elevation: 5,
+    alignSelf: "center",
+    marginBottom: 36
+  },
+  innerAnalysisHomeWeightContainer: {
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
+    width: "92%",
+    backgroundColor: "#FFF",
+    marginTop: 8,
+    flexDirection: "row",
+    borderBottomWidth: 1,
+    borderBottomColor: '#CDCDCD',
+    alignSelf: "center",
+    paddingBottom: 8
+  },
+
+  bottomWeightAnalysisHome: {
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
+    width: "92%",
+    alignSelf: "center",
   },
 
   headerHomeInformation: {
@@ -542,7 +595,7 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     width: "96%",
     flexDirection: "column",
-    marginTop: -16
+    marginTop: -16,
   },
   innerEditInformationInput: {
     alignItems: "flex-start",
@@ -573,8 +626,8 @@ const styles = StyleSheet.create({
     width: "96%",
     paddingLeft: 16,
     alignItems: "center",
-    justifyContent: 'space-between',
-    paddingRight: 8 
+    justifyContent: "space-between",
+    paddingRight: 8,
   },
 
   innerEditInformationTextInput: {
@@ -584,6 +637,36 @@ const styles = StyleSheet.create({
     height: 40,
     width: "96%",
     paddingLeft: 16,
+  },
+
+  modalAnalysisHomeContainer: {
+    alignSelf: "center",
+    backgroundColor: "rgba(36, 180, 69, 0.2)",
+    borderRadius: 8,
+    width: "88%",
+    backgroundColor: '#FFF',
+    padding: 16,
+  },
+  modalAnalysisHomeWeight: {
+    alignSelf: "center",
+    borderRadius: 24,
+    borderWidth: 1,
+    borderColor: "rgba(36, 180, 69, 0.8)",
+    width: "96%",
+    backgroundColor: '#FFF',
+    padding: 4,
+    paddingLeft: 16,
+    flexDirection: 'row',
+    justifyContent: "space-between",
+    alignItems: "center"
+  },
+  modalAnalysisHomeWeightText: {
+    borderRadius: 24,
+    backgroundColor: '#276047',
+    padding: 8,
+    width: '24%',
+    textAlign: "center",
+    color: '#FFF'
   },
 });
 export default styles;

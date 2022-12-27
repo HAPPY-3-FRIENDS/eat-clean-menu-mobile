@@ -7,6 +7,12 @@ const typos = StyleSheet.create({
     fontWeight: "bold",
     letterSpacing: 0.4
   },
+  headerLightItalic: {
+    fontSize: 32,
+    fontFamily: "sans-serif",
+    letterSpacing: 0.4,
+    fontStyle: "italic"
+  },
   subtitle: {
     fontSize: 22,
     fontFamily: "sans-serif",
@@ -24,6 +30,12 @@ const typos = StyleSheet.create({
     fontSize: 22,
     fontFamily: "sans-serif",
     letterSpacing: 0.4
+  },
+  subtitleLightItalic: {
+    fontSize: 22,
+    fontFamily: "sans-serif",
+    letterSpacing: 0.4,
+    fontStyle: "italic"
   },
 
   textItalic: {

@@ -21,6 +21,7 @@ let STORAGE_KEY = "@weight";
 let STORAGE_KEY_H = "@height";
 let STORAGE_KEY_A = "@age";
 let STORAGE_KEY_G = "@gender";
+let STORAGE_KEY_BMI = '@BMI';
 
 const AnalysisBMI = () => {
   const navigation = useNavigation();
@@ -38,6 +39,12 @@ const AnalysisBMI = () => {
   //Đối với phụ nữ: BMR = 655 + (9,6 x trọng lượng) + (1,8 x chiều cao) – (4,7 x tuổi).
   const BMRFemale =
     Math.round((655 + 9.6 * weight + 1.8 * height - 4.7 * age) * 100) / 100;
+
+  const saveData = async () => {
+    try {
+      await AsyncStorage.setItem(STORAGE_KEY_BMI, (Math.round(BMI * 100) / 100).toString());
+    } catch (e) {}
+  };
 
   const readWeight = async () => {
     try {
@@ -67,7 +74,7 @@ const AnalysisBMI = () => {
   const readAge = async () => {
     try {
       const value = await AsyncStorage.getItem(STORAGE_KEY_A);
-      console.log('age' + value);
+      console.log("age" + value);
       if (value !== null) {
         setAge(value);
       }
@@ -155,7 +162,10 @@ const AnalysisBMI = () => {
             </View>
           </View>
         </View>
-        <TouchableOpacity onPress={() => navigation.navigate('Payment')} style={button.settingAnalysisButton}>
+        <TouchableOpacity
+          onPress={() => [navigation.navigate("Payment"), saveData()]}
+          style={button.settingAnalysisButton}
+        >
           <Text style={[typo.textBold, textInput.settingText, colors.wColor]}>
             Tiếp tục
           </Text>
