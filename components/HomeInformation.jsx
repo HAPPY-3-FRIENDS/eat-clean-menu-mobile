@@ -152,7 +152,7 @@ const HomeInformation = () => {
                 <Text>Thông tin bảo mật</Text>
               </TouchableOpacity>
             </View>
-            <TouchableOpacity style={button.HomeInformationButton}>
+            <TouchableOpacity style={button.HomeInformationButton} onPress={() => navigation.navigate('Login')}>
               <Text style={[typo.textBold, textInput.settingText]}>Đăng xuất</Text>
             </TouchableOpacity>
           </ScrollView>

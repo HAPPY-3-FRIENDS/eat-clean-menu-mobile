@@ -26,9 +26,6 @@ const Login = () => {
         </View>
         <View style={styles.bottomLogin}>
           <TouchableOpacity onPress={() => navigation.navigate('LoginInformation')}>
-            <Image source={LoginFace} />
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('LoginInformation')}>
             <Image source={LoginGoogle} />
           </TouchableOpacity>
         </View>

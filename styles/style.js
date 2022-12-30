@@ -58,11 +58,11 @@ const styles = StyleSheet.create({
     marginTop: "8%",
   },
   bottomLogin: {
-    flex: 2,
+    flex: 1.5,
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "column",
-    marginTop: "16%",
+    marginTop: "24%",
     paddingTop: "8%",
   },
   headerInfo: {
@@ -489,11 +489,40 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-
     elevation: 5,
     alignSelf: "center",
-    marginBottom: 36
+    marginBottom: 36,
+    overflow: "hidden",
   },
+
+  innerAnalysisHomeCaloriesContainerBoxColumn: {
+    width: "92%",
+    marginTop: 8,
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 36,
+    flexDirection: "row",
+    alignSelf: "center"
+  },
+
+  innerAnalysisHomeCaloriesBoxColumn: {
+    width: "48%",
+    backgroundColor: "#FFF",
+    padding: 16,
+    marginTop: -16,
+    borderRadius: 32,
+    shadowColor: "#000",
+    overflow:"hidden",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+    alignSelf: "center",
+  },
+
   innerAnalysisHomeWeightContainer: {
     alignItems: "flex-start",
     justifyContent: "flex-start",
@@ -502,9 +531,9 @@ const styles = StyleSheet.create({
     marginTop: 8,
     flexDirection: "row",
     borderBottomWidth: 1,
-    borderBottomColor: '#CDCDCD',
+    borderBottomColor: "#CDCDCD",
     alignSelf: "center",
-    paddingBottom: 8
+    paddingBottom: 8,
   },
 
   bottomWeightAnalysisHome: {
@@ -644,7 +673,7 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(36, 180, 69, 0.2)",
     borderRadius: 8,
     width: "88%",
-    backgroundColor: '#FFF',
+    backgroundColor: "#FFF",
     padding: 16,
   },
   modalAnalysisHomeWeight: {
@@ -653,20 +682,29 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "rgba(36, 180, 69, 0.8)",
     width: "96%",
-    backgroundColor: '#FFF',
+    backgroundColor: "#FFF",
     padding: 4,
     paddingLeft: 16,
-    flexDirection: 'row',
+    flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "center"
+    alignItems: "center",
   },
   modalAnalysisHomeWeightText: {
     borderRadius: 24,
-    backgroundColor: '#276047',
+    backgroundColor: "#276047",
     padding: 8,
-    width: '24%',
+    width: "24%",
     textAlign: "center",
-    color: '#FFF'
+    color: "#FFF",
   },
+
+  innerAnalysisWeekWeight: {
+    position: "absolute",
+    alignSelf: "center",
+    alignItems: "center",
+    top: 24,
+    bottom: 0,
+    justifyContent: "center"
+  }
 });
 export default styles;

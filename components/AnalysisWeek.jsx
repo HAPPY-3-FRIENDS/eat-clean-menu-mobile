@@ -11,7 +11,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import moment from "moment";
 import "moment/locale/vi";
-import { LineChart, PieChart } from "react-native-chart-kit";
+import { BarChart, LineChart, ProgressChart } from "react-native-chart-kit";
 import { Dimensions } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import Modal from "react-native-modal";
@@ -30,21 +30,28 @@ import textInput from "../styles/textInput";
 import Header from "../assets/Header_Analysis.png";
 import BackBtn from "../assets/Button_back.png";
 import Avatar from "../assets/LoginInformation_Person.png";
-import Right from "../assets/Right.png";
-import Close from "../assets/Close.png";
+import Weight from "../assets/Weight.png";
 
 let STORAGE_KEY = "@weight";
 let STORAGE_KEY_BMI = "@BMI";
 
-const AnalysisHome = () => {
+const AnalysisWeek = () => {
   const navigation = useNavigation();
   const [weight, setWeight] = useState(0);
   const [BMI, setBMI] = useState(0);
   const [timeNow, setTimeNow] = useState(moment().format("LT"));
-  const [isModalVisible, setModalVisible] = useState(false);
 
-  const toggleModal = () => {
-    setModalVisible(!isModalVisible);
+  const data = {
+    labels: ["T2", "T3", "T4", "T5", "T6", "T7", "CN"],
+    datasets: [
+      {
+        data: [1200, 800, 1250, 900, 1000, 1100, 1500],
+      },
+    ],
+  };
+
+  const progressData = {
+    data: [1],
   };
 
   const readWeight = async () => {
@@ -100,13 +107,15 @@ const AnalysisHome = () => {
         <View style={[spacing.spaceBottom_ver_2, spacing.space_ver_1]}>
           <ScrollView showsVerticalScrollIndicator={false} style={{ flex: 1 }}>
             <View style={[styles.bottomDateAnalysisHome]}>
+              <TouchableOpacity
+                onPress={() => navigation.navigate("AnalysisHome")}
+              >
+                <Text style={[textInput.settingTextAnalysisHome]}>Ngày</Text>
+              </TouchableOpacity>
               <TouchableOpacity>
                 <Text style={[textInput.settingTextAnalysisHomeActive]}>
-                  Ngày
+                  Tuần
                 </Text>
-              </TouchableOpacity>
-              <TouchableOpacity onPress={() => navigation.navigate('AnalysisWeek')}>
-                <Text style={[textInput.settingTextAnalysisHome]}>Tuần</Text>
               </TouchableOpacity>
               <TouchableOpacity onPress={() => navigation.navigate("AnalysisMonth")}>
                 <Text style={[textInput.settingTextAnalysisHome]}>Tháng</Text>
@@ -115,7 +124,7 @@ const AnalysisHome = () => {
             <View
               style={[styles.bottomWeightAnalysisHome, spacing.space_ver_1]}
             >
-              <Text style={typo.textBoldItalic}>Cân nặng mới nhất</Text>
+              <Text style={typo.textBoldItalic}>Cân nặng</Text>
               <View style={styles.innerAnalysisHomeWeightContainerBox}>
                 <View style={styles.innerAnalysisHomeWeightContainer}>
                   <View style={[spacing.spaceLeft_ver_3, spacing.space_ver_3]}>
@@ -126,15 +135,6 @@ const AnalysisHome = () => {
                     <Text style={spacing.space_ver_2}>BMI {BMI}</Text>
                   </View>
                   <View>
-                    <Text
-                      style={[
-                        spacing.space_ver_3,
-                        spacing.padRight_ver_2,
-                        { textAlign: "right" },
-                      ]}
-                    >
-                      {timeNow} <Image source={Right} />
-                    </Text>
                     <LineChart
                       data={{
                         datasets: [
@@ -156,9 +156,15 @@ const AnalysisHome = () => {
                         backgroundGradientFrom: "#FFF",
                         backgroundGradientTo: "#FFF",
                         decimalPlaces: 0,
-                        color: (opacity = 1) => `rgba(160, 219, 253, ${opacity})`,
+                        color: (opacity = 1) =>
+                          `rgba(160, 219, 253, ${opacity})`,
                         style: {
                           borderRadius: 16,
+                        },
+                        propsForDots: {
+                          r: "4",
+                          strokeWidth: "0",
+                          stroke: "#000",
                         },
                       }}
                       style={{
@@ -167,114 +173,112 @@ const AnalysisHome = () => {
                     />
                   </View>
                 </View>
-                <TouchableOpacity
-                  onPress={toggleModal}
-                  style={button.InputNewWeight}
-                >
-                  <Text
-                    style={[
-                      typo.textBold,
-                      colors.wColor,
-                      textInput.settingText,
-                    ]}
-                  >
-                    Nhập cân nặng mới
-                  </Text>
-                </TouchableOpacity>
-                <Modal onBackdropPress={toggleModal} isVisible={isModalVisible}>
-                  <View style={styles.modalAnalysisHomeContainer}>
-                    <TouchableOpacity
-                      style={{ alignItems: "flex-end" }}
-                      onPress={toggleModal}
-                    >
-                      <Image source={Close} />
-                    </TouchableOpacity>
-                    <Text
-                      style={[
-                        typo.subtitle,
-                        textInput.settingText,
-                        spacing.space_ver_3,
-                        spacing.spaceBottom_ver_3,
-                      ]}
-                    >
-                      Cân nặng
-                    </Text>
-                    <Text
-                      style={[
-                        typo.subText,
-                        textInput.settingText,
-                        spacing.spaceBottom_ver_2,
-                      ]}
-                    >
-                      Hãy cho chúng tôi biết cân nặng hiện tại của bạn
-                    </Text>
-                    <View style={styles.modalAnalysisHomeWeight}>
-                      <TextInput
-                        keyboardType="numeric"
-                        maxLength={3}
-                        onChangeText={setWeight}
-                        value={weight}
-                      />
-                      <Text style={styles.modalAnalysisHomeWeightText}>kg</Text>
-                    </View>
-                    <TouchableOpacity style={button.updateInputNewWeight}>
-                      <Text style={[colors.wColor, textInput.settingText]}>
-                        Nhập
-                      </Text>
-                    </TouchableOpacity>
-                  </View>
-                </Modal>
               </View>
             </View>
             <View style={[spacing.space_ver_1, spacing.spaceLeft_ver_2]}>
-              <Text style={typo.textBoldItalic}>Số Calories hôm nay</Text>
+              <Text style={typo.textBoldItalic}>Thống kê của tuần</Text>
             </View>
             <View style={styles.innerAnalysisHomeCaloriesContainerBox}>
-              <PieChart
-                data={[
-                  {
-                    name: "/ Sáng",
-                    calories: 600,
-                    color: "#658EFF",
-                    legendFontColor: "#658EFF",
-                    legendFontSize: 12,
-                  },
-                  {
-                    name: "/ Trưa",
-                    calories: 300,
-                    color: "#FFCD26",
-                    legendFontColor: "#FFCD26",
-                    legendFontSize: 12,
-                  },
-                  {
-                    name: "/ Chiều",
-                    calories: 300,
-                    color: "#FF8C39",
-                    legendFontColor: "#FF8C39",
-                    legendFontSize: 12,
-                  },
-                ]}
-                width={Dimensions.get("window").width - 40}
+              <BarChart
+                data={data}
+                width={Dimensions.get("window").width}
                 height={220}
+                withHorizontalLabels={false}
+                fromZero={true}
+                showBarTops={false}
+                withInnerLines={false}
                 chartConfig={{
                   backgroundColor: "#FFF",
                   backgroundGradientFrom: "#FFF",
                   backgroundGradientTo: "#FFF",
-                  decimalPlaces: 0,
-                  color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
+                  decimalPlaces: 2,
+                  labelColor: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
+                  color: (opacity = 1) => `rgba(255, 140, 57, ${opacity})`,
                   style: {
                     borderRadius: 16,
                   },
                 }}
-                style={{
-                  marginVertical: 8,
-                  borderRadius: 16,
-                }}
-                accessor="calories"
-                paddingLeft='24'
-                absolute //for the absolute number remove if you want percentage
+                style={{ marginLeft: -56 }}
               />
-              <Text style={[typo.text, textInput.settingText, spacing.padBottom_ver_2]}><Text style={[typo.subtitle]}>~1,200</Text>  Calories</Text>
+            </View>
+            <View style={styles.innerAnalysisHomeCaloriesContainerBoxColumn}>
+              <View style={styles.innerAnalysisHomeCaloriesBoxColumn}>
+                <View
+                  style={{
+                    flexDirection: "row",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
+                  <Image source={Weight} />
+                  <Text style={[typo.textBold, colors.primaryColor]}>
+                    Cân nặng
+                  </Text>
+                </View>
+                <ProgressChart
+                  data={progressData}
+                  width={Dimensions.get("window").width - 240}
+                  height={120}
+                  strokeWidth={8}
+                  radius={56}
+                  chartConfig={{
+                    backgroundColor: "#FFF",
+                    backgroundGradientFrom: "#FFF",
+                    backgroundGradientTo: "#FFF",
+                    decimalPlaces: 2,
+                    labelColor: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
+                    color: (opacity = 1) => `rgba(255, 205, 38, ${opacity})`,
+                    style: {
+                      borderRadius: 16,
+                    },
+                  }}
+                  hideLegend={true}
+                  style={{ marginTop: 8 }}
+                />
+                <View style={[styles.innerAnalysisWeekWeight]}>
+                  <Text style={[colors.primaryColor, typo.subText]}>Từ 59kg</Text>
+                  <Text style={[colors.primaryColor, typo.textBold, spacing.space_ver_3]}>-1 kg</Text>
+                  <Text style={[colors.primaryColor, typo.subText, spacing.space_ver_3]}>còn 58kg</Text>
+                </View>
+              </View>
+              <View style={styles.innerAnalysisHomeCaloriesBoxColumn}>
+                <View
+                  style={{
+                    flexDirection: "row",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
+                  <Image source={Weight} />
+                  <Text style={[typo.textBold, colors.primaryColor]}>
+                    Calories
+                  </Text>
+                </View>
+                <ProgressChart
+                  data={progressData}
+                  width={Dimensions.get("window").width - 240}
+                  height={120}
+                  strokeWidth={8}
+                  radius={56}
+                  chartConfig={{
+                    backgroundColor: "#FFF",
+                    backgroundGradientFrom: "#FFF",
+                    backgroundGradientTo: "#FFF",
+                    decimalPlaces: 2,
+                    labelColor: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
+                    color: (opacity = 1) => `rgba(255, 140, 57, ${opacity})`,
+                    style: {
+                      borderRadius: 16,
+                    },
+                  }}
+                  hideLegend={true}
+                  style={{ marginTop: 8 }}
+                />
+                <View style={[styles.innerAnalysisWeekWeight]}>
+                  <Text style={[colors.primaryColor, typo.subtitle, spacing.space_ver_3]}>7856</Text>
+                  <Text style={[colors.primaryColor, typo.subText]}>kcal</Text>
+                </View>
+              </View>
             </View>
           </ScrollView>
         </View>
@@ -283,4 +287,4 @@ const AnalysisHome = () => {
   );
 };
 
-export default AnalysisHome;
+export default AnalysisWeek;

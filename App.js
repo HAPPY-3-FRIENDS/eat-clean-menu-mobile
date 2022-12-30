@@ -27,6 +27,8 @@ import Tips from "./components/Tips";
 import AnalysisHome from "./components/AnalysisHome";
 import HomeInformation from "./components/HomeInformation";
 import EditInformation from "./components/EditInformation";
+import AnalysisWeek from "./components/AnalysisWeek";
+import AnalysisMonth from "./components/AnalysisMonth";
 
 const Stack = createNativeStackNavigator();
 
@@ -221,6 +223,22 @@ export default function App() {
         <Stack.Screen
           name="EditInformation"
           component={EditInformation}
+          options={{ title: '' }}
+          screenOptions={{
+            fullScreenGestureEnabled:true
+          }}
+        />
+        <Stack.Screen
+          name="AnalysisWeek"
+          component={AnalysisWeek}
+          options={{ title: '' }}
+          screenOptions={{
+            fullScreenGestureEnabled:true
+          }}
+        />
+        <Stack.Screen
+          name="AnalysisMonth"
+          component={AnalysisMonth}
           options={{ title: '' }}
           screenOptions={{
             fullScreenGestureEnabled:true
