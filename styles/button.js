@@ -23,6 +23,13 @@ const colors = StyleSheet.create({
     padding: 24,
     borderRadius: 12,
   },
+  settingButtonActive: {
+    backgroundColor: '#A1F5C3',
+    width: '100%',
+    padding: 24,
+    borderRadius: 12,
+  },
+
   settingBackButton: {
     position: "absolute",
     top: '8%',
@@ -33,7 +40,7 @@ const colors = StyleSheet.create({
     width: '100%',
     padding: 24,
     borderRadius: 12,
-    marginTop: 120
+    marginTop: 64
   },
   settingPaymentButton: {
     backgroundColor: '#276047',

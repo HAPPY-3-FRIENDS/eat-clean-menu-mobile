@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import * as Progress from "react-native-progress";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import axios from "axios";
 
 //style
 import styles from "../styles/style";
@@ -21,7 +22,10 @@ let STORAGE_KEY = "@weight";
 let STORAGE_KEY_H = "@height";
 let STORAGE_KEY_A = "@age";
 let STORAGE_KEY_G = "@gender";
-let STORAGE_KEY_BMI = '@BMI';
+let STORAGE_KEY_BMI = "@BMI";
+let STORAGE_KEY_TARGET = "@target";
+let STORAGE_KEY_PRACTICE = "@practice";
+let STORAGE_KEY_CALORIES = "@calo";
 
 const AnalysisBMI = () => {
   const navigation = useNavigation();
@@ -29,20 +33,102 @@ const AnalysisBMI = () => {
   const [height, setHeight] = useState(0);
   const [age, setAge] = useState(0);
   const [gender, setGender] = useState("");
+  const [target, setTarget] = useState("");
+  const [practice, setPractice] = useState("");
+  const [calo, setCalo] = useState(0);
+  const [BMRFemaleNeed, setBMRFemaleNeed] = useState(0);
+  const [BMRMaleNeed, setBMRMaleNeed] = useState(0);
+  const [BMRMale, setBMRMale] = useState(0);
+  const [BMRFemale, setBMRFemale] = useState(0);
 
-  const BMI = weight / (((height / 100) * height) / 100);
+  const BMI = Math.round(weight / (((height / 100) * height) / 100) * 100) / 100;
 
-  //Đối với nam giới: BMR = 66 + (13,7 x trọng lượng) + (5 x chiều cao) – (6,8 x tuổi).
-  const BMRMale =
-    Math.round((66 + 13.7 * weight + 5 * height - 6.8 * age) * 100) / 100;
+  useEffect(() => {
+    readWeight();
+    readHeight();
+    readAge();
+    readGender();
+    readTarget();
+    readPractice();
+  }, []);
 
-  //Đối với phụ nữ: BMR = 655 + (9,6 x trọng lượng) + (1,8 x chiều cao) – (4,7 x tuổi).
-  const BMRFemale =
-    Math.round((655 + 9.6 * weight + 1.8 * height - 4.7 * age) * 100) / 100;
+  useEffect(() => {
+    CalcBMR();
+  });
+
+  const postMenuByUser = () =>
+    axios
+      .post(
+        "https://ecm-eat-clean-menu.azurewebsites.net/api/v1/user-dietary-info/2",
+        {
+          activityRate: practice,
+          bmi: BMI,
+          bmr: BMRFemale !== 0 ? BMRFemale : BMRMale,
+          caloriesConsumed: calo,
+          dietTarget: target,
+          gender: gender,
+          userAge: age,
+          userHeight: height,
+          userWeight: weight,
+        }
+      )
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+  const CalcBMR = () => {
+
+
+    //Đối với nam giới: BMR = 66 + (13,7 x trọng lượng) + (5 x chiều cao) – (6,8 x tuổi).
+    setBMRMale(
+      Math.round((66 + 13.7 * weight + 5 * height - 6.8 * age) * 100) / 100
+    );
+
+    //Đối với phụ nữ: BMR = 655 + (9,6 x trọng lượng) + (1,8 x chiều cao) – (4,7 x tuổi).
+    setBMRFemale(
+      Math.round((655 + 9.6 * weight + 1.8 * height - 4.7 * age) * 100) / 100
+    );
+    if (practice == "Không tập luyện") {
+      setBMRFemaleNeed(Math.round(BMRFemale * 1.2 * 100) / 100);
+      setBMRMaleNeed(Math.round(BMRMale * 1.2 * 100) / 100);
+    } else if (practice == "Ít tập luyện") {
+      setBMRFemaleNeed(Math.round(BMRFemale * 1.375 * 100) / 100);
+      setBMRMaleNeed(Math.round(BMRMale * 1.375 * 100) / 100);
+    } else if (practice == "Luyện tập vừa") {
+      setBMRFemaleNeed(Math.round(BMRFemale * 1.55 * 100) / 100);
+      setBMRMaleNeed(Math.round(BMRMale * 1.55 * 100) / 100);
+    } else if (practice == "Luyện tập nhiều") {
+      setBMRFemaleNeed(Math.round(BMRFemale * 1.725 * 100) / 100);
+      setBMRMaleNeed(Math.round(BMRMale * 1.725 * 100) / 100);
+    } else if (practice == "Luyện tập cường độ cao") {
+      setBMRFemaleNeed(Math.round(BMRFemale * 1.9 * 100) / 100);
+      setBMRMaleNeed(Math.round(BMRMale * 1.9 * 100) / 100);
+    }
+
+    if (target === "Giảm cân" && gender === "Nữ") {
+      setCalo(BMRFemaleNeed - 500);
+    } else if (target === "Tăng cân" && gender === "Nữ") {
+      setCalo(BMRFemaleNeed + 500);
+    } else if (target === "Giữ nguyên cân nặng" && gender === "Nữ") {
+      setCalo(BMRFemaleNeed);
+    } else if (target === "Giảm cân" && gender === "Nam") {
+      setCalo(BMRMaleNeed - 500);
+    } else if (target === "Tăng cân" && gender === "Nam") {
+      setCalo(BMRMaleNeed + 500);
+    } else if (target === "Giữ nguyên cân nặng" && gender === "Nam") {
+      setCalo(BMRMaleNeed);
+    }
+  };
 
   const saveData = async () => {
     try {
-      await AsyncStorage.setItem(STORAGE_KEY_BMI, (Math.round(BMI * 100) / 100).toString());
+      await AsyncStorage.setItem(
+        STORAGE_KEY_BMI,
+        (Math.round(BMI * 100) / 100).toString()
+      );
     } catch (e) {}
   };
 
@@ -96,12 +182,37 @@ const AnalysisBMI = () => {
     }
   };
 
-  useEffect(() => {
-    readWeight();
-    readHeight();
-    readAge();
-    readGender();
-  }, []);
+  const readTarget = async () => {
+    try {
+      const value = await AsyncStorage.getItem(STORAGE_KEY_TARGET);
+      console.log(value);
+
+      if (value !== null) {
+        setTarget(value);
+      }
+    } catch (e) {
+      alert("Failed to fetch the input from storage");
+    }
+  };
+
+  const readPractice = async () => {
+    try {
+      const value = await AsyncStorage.getItem(STORAGE_KEY_PRACTICE);
+      console.log(value);
+
+      if (value !== null) {
+        setPractice(value);
+      }
+    } catch (e) {
+      alert("Failed to fetch the input from storage");
+    }
+  };
+
+  const saveCalo = async () => {
+    try {
+      await AsyncStorage.setItem(STORAGE_KEY_CALORIES, calo.toString());
+    } catch (e) {}
+  };
 
   return (
     <View style={styles.container}>
@@ -139,7 +250,15 @@ const AnalysisBMI = () => {
               BMI
             </Text>
             <Text style={[typo.text, textInput.settingText, colors.wColor]}>
-              {Math.round(BMI * 100) / 100}
+              {BMI}
+            </Text>
+          </View>
+          <View style={textInput.settingTextAnalysis}>
+            <Text style={[typo.text, textInput.settingText, colors.wColor]}>
+              BMR
+            </Text>
+            <Text style={[typo.text, textInput.settingText, colors.wColor]}>
+              {gender === "Nam" ? BMRMale : BMRFemale}
             </Text>
           </View>
         </View>
@@ -154,16 +273,21 @@ const AnalysisBMI = () => {
           <View style={textInput.settingTextAnalysisGroup}>
             <View style={textInput.settingTextAnalysis}>
               <Text style={[typo.text, textInput.settingText, colors.wColor]}>
-                BMR
+                Calo
               </Text>
               <Text style={[typo.text, textInput.settingText, colors.wColor]}>
-                {gender === "Nam" ? BMRMale : BMRFemale}
+                {calo} Kcal/ngày
               </Text>
             </View>
           </View>
         </View>
         <TouchableOpacity
-          onPress={() => [navigation.navigate("Payment"), saveData()]}
+          onPress={() => [
+            navigation.navigate("DailyMenu"),
+            saveData(),
+            saveCalo(),
+            postMenuByUser(),
+          ]}
           style={button.settingAnalysisButton}
         >
           <Text style={[typo.textBold, textInput.settingText, colors.wColor]}>

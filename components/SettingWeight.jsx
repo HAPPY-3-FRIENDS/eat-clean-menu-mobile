@@ -74,7 +74,7 @@ const ItemToRender = ({ item, index }, indexSelected, vertical) => {
 };
 
 const SettingWeight = () => {
-  const [selected, setSelected] = useState(46);
+  const [selected, setSelected] = useState(45);
 
   const saveData = async () => {
     try {

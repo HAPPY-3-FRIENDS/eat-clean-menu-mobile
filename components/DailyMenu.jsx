@@ -13,6 +13,7 @@ import CalendarStrip from "react-native-calendar-strip";
 import moment from "moment";
 import "moment/locale/vi";
 import * as Progress from "react-native-progress";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 //style
 import styles from "../styles/style";
@@ -27,12 +28,32 @@ import Ava from "../assets/LoginInformation_Person.png";
 import Statistic from "../assets/Statistic_icon.png";
 import Dish1 from "../assets/Dish_1.png";
 
+let STORAGE_KEY_CALORIES = "@calo";
 const DailyMenu = () => {
   const navigation = useNavigation();
   const [selectedDate, setSelectedDate] = useState(moment().format());
   const [dateNow, setDateNow] = useState(
     moment().format("[ngày] Do MMMM, YYYY")
   );
+
+  const [dateSend, setDateSend] = useState(
+    moment().format("YYYY-MM-DD")
+  );
+
+  console.log(dateSend)
+
+  const readCalo = async () => {
+    try {
+      const value = await AsyncStorage.getItem(STORAGE_KEY_CALORIES);
+      console.log(value);
+    } catch (e) {
+      alert("Failed to fetch the input from storage");
+    }
+  };
+
+  useEffect(() => {
+    readCalo();
+  }, []);
   console.log(moment());
   return (
     <View style={styles.container}>

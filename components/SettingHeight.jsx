@@ -76,7 +76,7 @@ const ItemToRender = ({ item, index }, indexSelected, vertical) => {
 };
 
 const SettingHeight = () => {
-  const [selected, setSelected] = useState(51);
+  const [selected, setSelected] = useState(50);
 
   const navigation = useNavigation();
   function handleChange(index) {
